@@ -1,0 +1,16 @@
+// Wrapper
+.wrapper {
+    max-width: em(1000);
+    margin: 0 auto;
+    width: 100vw;
+    overflow-x: hidden;
+    // border-radius: 10px;
+    background-color: rgba(black, 0.2);
+
+    @include mq($desktopWide){
+        margin: em(8) auto;
+        // border: 3px solid $textColor;
+        overflow-x: hidden;
+    }
+
+}

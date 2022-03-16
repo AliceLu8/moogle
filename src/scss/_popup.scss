@@ -1,0 +1,33 @@
+.fav-btn {
+    // position: absolute;
+    width: 35px;
+    right: 15px;
+}
+
+.popup {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    background-color:rgba($color: #000000, $alpha: 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .item-popup {
+        position: relative;
+        width: 100%;
+        max-width: 560px;
+        background-color: white;
+        button {
+            position: absolute;
+            top: 0;
+            right: 0;
+            &:hover {
+                background-color: $highlightColor;
+                color: $textColor;
+                font-weight: bolder;
+            }
+        }
+    }
+}

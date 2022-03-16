@@ -1,0 +1,62 @@
+// Header
+header {
+    h1 {
+        margin: em(2) 0 em(6);
+        text-align: center;
+    }
+    a {
+        text-decoration: none;
+    }
+
+    .headericon {
+        display: flex;
+        float: left;
+        position: relative;
+        margin-top: .5rem;
+        margin-left: .5rem;
+
+        img {
+            width: 100px;
+            height: 60px;
+            align-self: center;
+            margin-right: em(20);
+            margin-left: em(10);
+        }
+
+        .blurry-effect {
+            height: 1px;
+            width: 100vw;
+            border: 2px solid white;
+            position: absolute;
+            top: 42px;
+            left: 73px;
+            filter: blur(5px);
+        }
+        @include mq($tablet){
+            
+        }
+
+        @include mq($desktopWide){
+        }
+    }
+
+    @include mq($tablet){
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: em(12);
+        
+        h1 {
+            margin: 0;
+            text-align: left;
+        }
+    }
+
+    @include mq($desktopWide){
+        margin: em(20);
+        h1 {
+            font-size: em(48);
+        }
+    }
+
+}

@@ -1,0 +1,37 @@
+.item-single-movie {
+    padding-top: 3rem;
+    padding-bottom: 5rem;
+
+    h2 {
+        margin-top: 50px;
+        font-size: 1.5rem;
+        padding-left: 3rem;
+    }
+    .single-summary {
+        padding: 2rem 1.75rem 2rem 1.75rem;
+    }
+    .movie-poster {
+        max-width: 300px;
+        height: 450px;
+        margin: 0 auto;
+        box-shadow: 15px 15px 20px $grey;
+    }
+
+    .fav-btn {
+        padding-top: .5rem;
+    }
+}
+
+
+
+@include mq($desktop) {
+.item-single-movie {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    padding: 3rem 1rem 5rem 5rem;
+}
+
+.single-summary {
+    padding-left: 3rem;
+}
+}

@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/moogle/static/css/main.e2e5a611.css",
+    "main.js": "/moogle/static/js/main.d456bd57.js",
+    "static/media/no-movie-poster.jpg": "/moogle/static/media/no-movie-poster.dc594cc695d6716f3218.jpg",
+    "index.html": "/moogle/index.html",
+    "main.e2e5a611.css.map": "/moogle/static/css/main.e2e5a611.css.map",
+    "main.d456bd57.js.map": "/moogle/static/js/main.d456bd57.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e2e5a611.css",
+    "static/js/main.d456bd57.js"
+  ]
+}
