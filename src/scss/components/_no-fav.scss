@@ -1,0 +1,31 @@
+// No favourite icon for Page Favs
+
+.no-fav-container {
+    padding: 1rem 2rem;
+    text-align: center;
+    p {
+        font-size: 1.15rem;
+    }
+
+    .fav-text{
+        color: $red;
+    }
+
+    .add {
+        padding-top: 1rem;
+
+        .icon {
+            fill: $lightGrey;
+            margin-left: 1rem;
+            
+            animation: slideInLeft; /* referring directly to the animation's @keyframe declaration */
+            animation-duration: 6s; /* don't forget to set a duration! */
+            animation-iteration-count: infinite;
+        }
+    }
+    
+    .no-fav {
+        width: 25px;
+        vertical-align: middle;
+    }
+}

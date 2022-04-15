@@ -1,0 +1,8 @@
+@use "../utilities/variables" as *;
+
+// Body
+body {
+    background-color: black;
+    color: $textColor;
+}
+

@@ -24,42 +24,36 @@ function MovieCard({ movie }) {
     }
 
     return (
-        <div className="movie-container">
-            <div className="movie-card">
-                <div className="movie-poster">
-                    {movie.poster_path === null ? 
-                        <img src={noPoster} alt="No Poster" /> :
-                        <img src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`} alt={movie.title} />
-                    }
-                </div>
-                    
-                <div className="movie-info">
-                    <div className="overview">
-                        <p>{movie.overview}</p>
-                    </div>
-                    <div className="more-info">
-                        <Link to={`/movie/${movie.id}`}>More Info</Link>
-                    </div>
-                    <p className="release-date">Release Date: {movie.release_date}</p>
-                </div>
-                
+        <div className="movie-card fav-movie">
+            <div className="movie-poster">
+                {movie.poster_path === null ? 
+                    <img src = {noPoster} alt = "No poster available." /> : 
+                    <img key={movie.id} src = {`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} alt = {movie.title} />
+                }    
             </div>
 
             <h3>{movie.title}</h3>
+            
+            <div className="rate-date">
+                <img className="icon" src={ Icon } alt="Icon" />    
+                <p className="rate"> {movie.vote_average}</p>
+            </div>
 
-            <div className="rate-container">
-                <div className="rate-date">
-                    <div className="item-rate">
-                        <img className="icon" src={ Icon } alt="Icon" />
-                        <p className="rate">{movie.vote_average}</p>
-                    </div>
+            <div className="movie-info fav-info">
+                <div className="overview">
+                        <p>{movie.overview}</p>
                 </div>
-                <div className="btn-favourite">
-                        {movieFav ? 
-                            <FavButton movie={movie} remove={true} handleFavClick={handleFavClick} /> : 
-                            <FavButton movie={movie} handleFavClick={handleFavClick} />
-                        }
-                    </div>
+                <Link to={`/movie/${movie.id}` }>
+                    <div className="more-info">More Info</div>
+                </Link>
+                <p className="release-date">Release Date: {movie.release_date}</p>
+            </div>
+            
+            <div className="btn-favourite">
+                {movieFav ? 
+                    <FavButton movie={movie} remove={true} handleFavClick={handleFavClick} /> : 
+                    <FavButton movie={movie} handleFavClick={handleFavClick} />
+                }
             </div>
         </div>
     )

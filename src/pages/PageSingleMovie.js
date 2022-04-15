@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'; 
 import { useParams } from 'react-router-dom';
-import { API_KEY} from '../globals/globals';
+import { API_KEY } from '../globals/globals';
 import noPoster from '../images/no-movie-poster.jpg';
 import FavButton from '../components/FavButton';
 import { isFav, addToFav, deleteFav } from '../utilities/storage';
@@ -41,33 +41,54 @@ function PageSingleMovie() {
     return (
         <section className="page-single-movie">
 
-            {movie !== null &&
-                <section className="item-single-movie">
-                    <div className="movie-poster">
+            {movie !== null && 
+                <>
+                    <div className="backdrop-container">
                         {movie.backdrop_path === null ?
-                            <img src={noPoster} alt="No Poster" /> :
-                            <img src={`https://image.tmdb.org/t/p/original${movie.poster_path}`} alt={movie.title} />
+                            <img src={noPoster} alt="No Poster" className="backdrop-img" /> :
+                            <img src={`https://image.tmdb.org/t/p/original${movie.backdrop_path}`} alt={movie.title} className="backdrop-img" />
                         }
-                        <div className="fav-btn">
-                            <div className="rate-date">
-                                <div className="item-rate">
-                                    <img className="icon" src={ Icon } alt="Icon" />
-                                    <p className="rate">{movie.vote_average}</p>
+                    </div>
+                    <section className="item-single-movie">
+                        
+                        <div className="movie-poster">
+                            {movie.backdrop_path === null ?
+                                <img src={noPoster} alt="No Poster" /> :
+                                <img src={`https://image.tmdb.org/t/p/original${movie.poster_path}`} alt={movie.title} />
+                            }
+                            <div className="fav-btn">
+                                <div className="rate-date">
+                                    <div className="item-rate">
+                                        <img className="icon" src={ Icon } alt="Icon" />
+                                        <p className="rate">{movie.vote_average}</p>
+                                    </div>
+                                </div>
+                                <div className="btn-favourite">
+                                    {movieFav ? 
+                                        <FavButton movie={movie} remove={true} handleFavClick={handleFavClick} /> : 
+                                        <FavButton movie={movie} handleFavClick={handleFavClick} />
+                                    }
                                 </div>
                             </div>
-                            {movieFav ?
-                                <FavButton movie={movie} remove={true} handleFavClick={handleFavClick} /> :
-                                <FavButton movie={movie} handleFavClick={handleFavClick} />
-                            }
                         </div>
-                    </div>
-                    <div className="single-summary">
-                        {movie !== null && <h2>{movie.title}</h2>}
-                        {movie !== null && <p><strong>Release Date: </strong>{movie.release_date}</p>}
-                        <p><strong>Movie Overview: </strong></p>
-                        {movie !== null && <p>{movie.overview}</p>} 
-                    </div>
-                </section>
+
+                        <div className="single-summary">
+                            {movie !== null && <h2>{movie.title}</h2>}
+                            
+                            <div className="summary-container">
+                                {movie !== null && 
+                                <p className="fav-release-date"><strong className="release-title">Release Date: </strong>{movie.release_date}</p>}
+                                <p className="fav-overview"><strong>Movie Overview: </strong></p>
+                                {movie !== null && <p>{movie.overview}</p>}
+
+                                <div className = 'genres'>
+                                    {movie.genres.map((tag, i) => <div key={i} className = "tag"> {tag.name}</div>)}
+                                </div>
+                            </div>
+
+                        </div>
+                    </section>
+                </>
             }
         </section>
     )

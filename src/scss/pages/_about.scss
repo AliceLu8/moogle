@@ -1,0 +1,47 @@
+@use "../utilities/mixins" as *;
+@use "../utilities/variables" as *;
+
+.tmdblogo{
+    width: 100px;
+    display: flex; 
+    margin: 40px auto;
+}
+
+.about-page {
+    margin: 3rem 2rem 5rem 2rem;
+    border: 2px solid $grey;
+    padding: 2rem 2rem;
+
+    @media (min-width:$tablet) {
+        margin: 3rem 3rem 5rem 3rem;
+        padding: 2rem 3rem;
+        
+        .tmdblogo{
+            width: 125px;
+        }
+    }
+
+    @media (min-width:$portraitTablet) {
+        margin: 3rem 3rem 5rem 3rem;
+        padding: 2.5rem 3.5rem;
+        p {
+            font-size: 0.95rem;
+        }
+
+        .tmdblogo{
+            width: 175px;
+        }
+    }
+    
+    @media (min-width:$desktopWide) {
+        margin: 10rem 5rem 5rem 5rem;
+        padding: 3rem 4rem;
+        p {
+            font-size: 1.15rem;
+        }
+
+        .tmdblogo{
+            width: 200px;
+        }
+    }
+}

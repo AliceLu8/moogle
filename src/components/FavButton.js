@@ -14,7 +14,7 @@ function FavButton( { movie, remove, handleFavClick }) {
         <>
             {remove === false ? 
             <div className="fav-btn" ><img onClick={handleAddFav} src={ fav } alt="Solid heart"/></div> : 
-            <div className="fav-btn"><img className="fav-btn" onClick={handleRemoveFav}src={ unfav } alt="Empty heart"/></div>}
+            <div className="fav-btn"><img onClick={handleRemoveFav}src={ unfav } alt="Empty heart"/></div>}
         </>
     );
 }

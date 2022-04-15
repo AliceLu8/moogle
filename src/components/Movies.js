@@ -1,8 +1,8 @@
-import MovieCard from "./MovieCard"
+import MovieCard from "./MovieCard";
 
 function Movies({ movies, isFav }) {
     return (
-        <section>
+        <section className="movies-wrapper">
             {isFav ?
                 <div className="movies-container">
                     {movies.map(movie => <MovieCard key={movie.id} movie={movie} isFav={true}/> )}

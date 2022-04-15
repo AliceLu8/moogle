@@ -1,0 +1,83 @@
+// Hamburger Menu for Mobile Styling
+
+@use "../utilities/variables" as *;
+@use "../utilities/mixins" as *;
+
+@media (max-width:$tablet) {
+    .nav-main {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 255px;
+        width: 100%;
+        clip-path: circle(18px at calc(100% - 45px) 47px);
+        transition: all 0.3s ease-in-out;
+
+        ul {
+            display: block;
+            margin-top: 6rem;
+            font-size: 1.25rem;
+            padding-left: 0;
+
+            li {
+                text-align: center;
+                background-color: $dk-background;
+
+                a::after{
+                    position: absolute;
+                    content: "";
+                    background: #fff;
+                }
+                a:hover::after{
+                    transform: scaleY(1);
+                }
+
+                a {
+                    line-height: 50px;
+                    text-decoration: none;
+                    display: inline-block;
+                    width: 120px;
+                    -webkit-transition: all 0.2s ease-in-out;
+                    transition: all 0.2s ease-in-out;
+                    
+                    color: $red;
+                    background: $dk-background;
+                    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5), 0 0 15px rgba(255,255,255, 0.5);
+
+                    &:hover,
+                    &:focus,
+                    &:active {
+                        color: $light;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.show .nav-main {
+    clip-path: circle(75%);
+}
+
+.menu-btn {
+    position: fixed;
+    z-index: 3000;
+    right: 20px;
+    top: 32px;
+    height: 50px;
+    width: 50px;
+    text-align: center;
+    line-height: 20px;
+    border-radius: 50%;
+    font-size: 15px;
+    color: #e6e6e6;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+
+
+
+
+
+

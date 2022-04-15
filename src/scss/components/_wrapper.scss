@@ -1,0 +1,21 @@
+// Wrapper
+
+@use "../utilities/variables" as *;
+@use "../utilities/mixins" as *;
+
+.wrapper {
+    margin: 0 auto;
+    overflow-x: hidden;
+    background-color: $dk-background;
+
+    .main-wrapper {
+        padding-top: 7rem;
+    }
+
+    @media (min-width:$desktop) {
+        .main-wrapper {
+            padding-bottom: 10rem;
+        }
+    }
+
+}

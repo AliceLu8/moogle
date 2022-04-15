@@ -1,0 +1,17 @@
+// Scroll to top for Home page
+
+@use "../utilities/mixins" as *;
+@use "../utilities/variables" as *;
+
+.scroll-to-top {
+    position: fixed;
+    bottom: 4rem;
+    right: 2rem;
+    height: 2rem;
+    width: 2rem;
+    color: $highlightColor;
+
+    @media (min-width:$desktop) {
+        display: none;
+    }
+}

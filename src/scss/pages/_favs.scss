@@ -1,0 +1,29 @@
+@use "../utilities/mixins" as *;
+@use "../utilities/variables" as *;
+
+.favs-page {
+    h2 {
+        font-size: 1.25rem;
+        text-align: center;
+        padding-bottom: 2rem;
+        color: $lightGrey;
+        background: $dk-background;
+        text-shadow: 0 0 15px rgba(255,255,255, 0.5), 0 0 10px rgba(255,255,255, 0.5);
+    }
+
+    @media (min-width:$landscapeIphone) {
+        margin: 0 3rem;
+        h2 {
+            font-size: 1.5rem;
+            margin-bottom: 0;
+        }
+    }
+
+    @media (min-width:$desktop) {
+        margin: 0 8rem;
+        h2 {
+            font-size: 2rem;
+        }
+    }
+}
+

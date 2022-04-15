@@ -1,0 +1,320 @@
+@use "../utilities/mixins" as *;
+@use "../utilities/variables" as *;
+
+.page-single-movie {
+    margin: 0 auto;
+    padding: 3rem 0 40rem 0;
+    position: relative;
+
+    // Backdrop Image
+    .backdrop-container {
+        // position: absolute;
+
+        .backdrop-img {
+            object-fit: cover;
+            width: 100%;
+            height: 400px;
+            filter:brightness(0.35);
+        }
+    }
+
+    .item-single-movie {
+        position: absolute;
+        top: 8rem;
+        left: 0;
+        margin: 0 auto;
+        padding: 0 .5rem;
+
+        .movie-poster {
+            position: relative;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+            
+            img {
+                box-shadow: 0 5px 20px 10px rgba(216, 216, 216, 0.362);
+            }
+
+            .rate-date {
+                display: flex;
+                justify-content: space-between;
+                position: absolute;
+                top: .5rem;
+                left: 2rem;
+                z-index: 9;
+
+                .icon {
+                    width: 50px;
+                    height: 50px;
+                    box-shadow: none;
+                }
+
+                .rate {
+                    position: absolute;
+                    top: 1.28rem;
+                    left: .75rem;
+                    color: $highlightColor;
+                }
+            }
+
+            .fav-btn {
+                img {
+                box-shadow: none;
+                }
+                .btn-favourite .fav-btn{
+                    position: absolute;
+                    top: .5rem;
+                    right: 2rem;
+                    width: 40px;
+                    height: auto;
+                    border: none;
+                    background-color: transparent;
+                    cursor: pointer;
+                }
+            }
+
+            @media (min-width:$landscapeIphone) {
+                width: 400px;
+            }
+    
+            @media (min-width:$portraitTablet) {
+                width: 450px;
+            }
+        }
+
+        h2 {
+            padding: 1.5rem 0 2rem 0;
+            margin: 0;
+            text-align: center;
+            font-size: 1.25rem;
+        }
+
+        .single-summary {
+            p {
+                margin-bottom: 0;
+                font-size: .85rem;
+            }
+
+            .summary-container {
+                padding: .5rem .75rem .5rem .75rem;
+                margin-top: 1rem;
+
+                .fav-release-date {
+                    margin: 0;
+                    padding-bottom: .5rem;
+
+                    .release-title {
+                        color: $lightGrey;
+                    }
+                }
+
+                .fav-overview {
+                    padding: 0;
+                    margin: 0;
+                    color: $lightGrey;
+                }
+
+                .release-title,
+                .fav-overview {
+                    font-size: 1rem;
+                }
+            }
+
+            .genres {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 1rem;
+                padding: 3rem 0 2.5rem 0;
+                margin: 0 .5rem;
+
+                .tag {
+                    border: 1px solid $lightGrey;
+                    border-radius: 10px;
+                    padding: .25rem;
+                    font-size: .75rem;
+                    text-align: center;
+                    width: 6rem;
+                }
+            }
+        }
+
+        @media (min-width:$landscapeIphone) {
+            h2 {
+                font-size: 1.15rem;
+            }
+        }
+
+        @media (min-width:$portraitTablet) {
+            h2 {
+                font-size: 1.5rem;
+            }
+
+            .single-summary {
+                p {
+                    font-size: 0.9rem;
+                }
+            }
+        }
+
+        @media (min-width:$landscapeIpad) {
+            display: flex;
+            align-items: center;
+
+            h2 {
+                font-size: 1.5rem;
+                padding: 0;
+
+                // Text effect source from CodePen: "https://codepen.io/avstorm/pen/WNrMqjG"
+                color: #fff;
+                background: linear-gradient(to right, #53b2d59a 0, #53b2d59a 10%, #ffffff 20%);
+                background-position: 0;
+                background-clip: text;
+                -webkit-text-fill-color: transparent;
+                animation: shine 8s infinite linear;
+                animation-fill-mode: forwards;
+                -webkit-text-size-adjust: none;
+                text-decoration: none;
+                white-space: nowrap;
+            }
+                @-moz-keyframes shine {
+                    0% {
+                        background-position: 0;
+                    }
+                    60% {
+                        background-position: 600px;
+                    }
+                    100% {
+                        background-position: 600px;
+                    }
+                }
+                @-webkit-keyframes shine {
+                    0% {
+                        background-position: 0;
+                    }
+                    60% {
+                        background-position: 600px;
+                    }
+                    100% {
+                        background-position: 600px;
+                    }
+                }
+                @-o-keyframes shine {
+                    0% {
+                        background-position: 0;
+                    }
+                    60% {
+                        background-position: 600px;
+                    }
+                    100% {
+                        background-position: 600px;
+                    }
+                }
+                @keyframes shine {
+                    0% {
+                        background-position: 0;
+                    }
+                    60% {
+                        background-position: 600px;
+                    }
+                    100% {
+                        background-position: 600px;
+                    }
+                }
+                // End of text effect source CodePen
+
+            padding: 0 3rem;
+
+            .single-summary {
+                width: 70%;
+                padding-left: 1rem;
+
+                .summary-container {
+                    margin-top: 1rem;
+                    padding: .75rem;
+                }
+            }
+        }
+
+        @media (min-width:$desktop) {
+            padding: 0 5rem;
+
+            h2 {
+                font-size: 1.75rem;
+                padding-bottom: 2rem;
+            }
+
+            .single-summary {
+                width: 70%;
+
+                .summary-container {
+                    margin-top: 0;
+
+                    .fav-overview {
+                        padding-top: 1rem;
+                    }
+                    .release-title,
+                    .fav-overview {
+                        font-size: 1.25rem;
+                    }
+                }
+
+                p {
+                    font-size: 1rem;
+                }
+            }
+        }
+
+        @media (min-width:$desktopWide) {
+            h2 {
+                font-size: 2.5rem;
+            }
+        }
+
+        @media (min-width:$landscapeIphone) {
+            .backdrop-container {
+                .backdrop-img {
+                    height: 500px;
+                }
+            }
+        }   
+    }
+
+    @media (min-width:$tablet) {
+        padding-bottom: 30rem;
+        .backdrop-container {
+            .backdrop-img {
+                height: 500px;
+            }
+        }
+    }
+
+    @media (min-width:$portraitTablet) {
+        padding-bottom: 30rem;
+
+        .backdrop-container {
+            .backdrop-img {
+                height: 550px;
+            }
+        }
+    }
+    
+    @media (min-width:$landscapeIpad) {
+        padding-bottom: 1rem;
+        .backdrop-container {
+            .backdrop-img {
+                height: 600px;
+            }
+        }
+    }
+    @media (min-width:$desktopWide) {
+        .backdrop-container {
+            .backdrop-img {
+                height: 525px;
+            }
+        }
+    }
+    @media (min-width:$desktopHD) {
+        padding-bottom: 2rem;
+    }
+}
+

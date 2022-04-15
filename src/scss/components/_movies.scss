@@ -1,0 +1,150 @@
+// Movies
+
+@use "../utilities/variables" as *;
+@use "../utilities/mixins" as *;
+
+.movies-container {
+    padding: 0 1.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-evenly;
+
+    .movie-card{
+        width: 300px;
+        position: relative;
+
+        h3 {
+            font-size: 1rem;
+            padding: 1rem 0 2rem 0;
+        }
+
+        .movie-info {
+            border-radius: 5px;
+            position: absolute;
+            padding: 7rem 2rem 0 2rem;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 85%;
+            background-color: rgba(0,0,0,0.8);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: left;
+            opacity: 0;
+            transition: opacity 0.25s;
+
+            .release-date {
+                text-align: center;
+                padding-top: 3rem;
+                font-size: 0.80rem;
+            }
+        }
+
+        .movie-info:hover {
+            opacity: 1;
+        }
+
+        .movie-info .overview {
+            text-align: center;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .overview {
+            p {
+                font-size: 0.80rem;
+            }
+        }
+
+        a {
+            align-self: center;
+            .more-info {
+                text-align: center;
+                margin-top: 4rem;
+                border: 1px solid $red;
+                border-radius: 20px;
+                width: 10rem;
+                padding: .5rem;
+                align-self: center;
+                font-size: .80rem;
+
+                &:hover {
+                    background: rgb(255, 255, 255, 0.7);
+                }
+            }
+        }
+
+        .rate-date {
+            display: flex;
+            justify-content: space-between;
+            position: absolute;
+            top: .5rem;
+            left: .5rem;
+            z-index: 9;
+
+            .icon {
+                width: 50px;
+                height: 50px;
+            }
+
+            .rate {
+                position: absolute;
+                top: 1.28rem;
+                left: .75rem;
+                color: $highlightColor;
+            }
+        }
+
+        .btn-favourite .fav-btn{
+            position: absolute;
+            top: .5rem;
+            right: .5rem;
+            width: 40px;
+            height: auto;
+            border: none;
+            background-color: transparent;
+            cursor: pointer;
+        }
+
+        @media (min-width:$landscapeIphone) {
+            width: 400px;
+        }
+
+        @media (min-width:$portraitTablet) {
+            width: 250px;
+        }
+    }
+
+    @media (min-width:$tablet) {
+        gap: 10px;
+    }
+    
+    @media (min-width:$portraitTablet) {
+        gap: 10px;
+    }
+
+    @media (min-width:$desktop) {
+        gap: 20px;
+    }
+
+    @media (min-width:em(93.75)) {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+    }
+
+    @media (min-width:$portraitTablet) {
+        border: 2px solid $grey;
+        margin: 0 1rem;
+        padding: 1.5rem .75rem;
+    }
+
+    @media (min-width:$desktop) {
+        padding: 2rem 1rem;
+    }
+}
+

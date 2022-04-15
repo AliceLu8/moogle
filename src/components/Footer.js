@@ -1,13 +1,17 @@
-function Footer() {
+import React from 'react';
+import { NavLink } from 'react-router-dom';
+import { getYear } from '../utilities/getDates';
+
+function Footer({ copyright, author }) {
     return (
         <footer className="footer-container">
             <section className="item-footer">
                 <div className="about">
                     <h4 className="footer-title">About Us</h4>
                     <ul>
-                        <li>Home</li>
-                        <li>About Moogle</li>
-                        <li>Favourite</li>
+                        <li><NavLink to='/'>Home</NavLink></li>
+                        <li><NavLink to='/about'>About Moogle</NavLink></li>
+                        <li><NavLink to='/favs'>Favourite</NavLink></li>
                     </ul>
                 </div>
                 <div className="info">
@@ -27,11 +31,18 @@ function Footer() {
                     </ul>
                 </div>
             </section>
+
             <div className="copyright">
-                <p>&copy; 2022 FWD-29 | Created by Alice Lu</p>
+                <p>&copy; {copyright} | {author} </p>
             </div>
         </footer>
     )
+}
+
+
+Footer.defaultProps = {
+    author: 'Alice Lu',
+    copyright: getYear()
 }
 
 export default Footer;

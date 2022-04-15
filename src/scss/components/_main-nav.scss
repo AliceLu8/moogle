@@ -1,0 +1,52 @@
+// Menu Nav Styling Responsive
+
+@use "../utilities/variables" as *;
+@use "../utilities/mixins" as *;
+
+@media (min-width:$tablet) {
+    .nav-main {
+        margin-top: .25rem;
+        position: fixed;
+        right: 2.5rem;
+
+        ul {
+            display: flex;
+            justify-content: space-between;
+            gap: 3rem;
+
+            a {
+                line-height: 50px;
+                text-decoration: none;
+                display: inline-block;
+                -webkit-transition: all 0.2s ease-in-out;
+                transition: all 0.2s ease-in-out;
+                color: $red;
+                background: none;
+                text-shadow: 0 0 5px rgba(255,255,255,.4), 0 0 40px rgba(255,255,255,.4);
+
+                &:hover,
+                &:focus,
+                &:active {
+                    color: $light;
+                }
+            }
+        }
+    }
+}
+
+@media (min-width:$desktopWide) {
+    .nav-main {
+        right: 4rem;
+        
+        a {
+            font-size: 1.25rem;
+        }
+    }
+}
+
+.menu-btn {
+    
+    @media (min-width:$tablet) {
+        display: none;
+    }
+}

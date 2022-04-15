@@ -23,9 +23,6 @@ function PageFavs() {
         <main>
             <section className="favs-page">
                 <h2>Favourite Page</h2>
-
-                {/* {moviesData !== null && moviesData.length > 0 ?
-                    <Movies movies={moviesData} /> : <NoFavMovie /> } */}
                     {moviesData !== null && moviesData.length > 0 ?
                     <Movies movies={moviesData} /> : <NoFavMovie /> }
             </section>

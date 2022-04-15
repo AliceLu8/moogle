@@ -1,55 +1,18 @@
 import { Link } from 'react-router-dom';
-import { useState, useEffect } from 'react';
-import NavMain from './NavMain';
-import logo from '../images/moogleLogo.svg';
+import MainNav from './MainNav';
+
+import Logo from '../logo/moogleLogo.svg';
 
 function Header() {
-
-    const [navOpen, setNavOpen] = useState(false);
-
-    const showHideNav = () => {
-        setNavOpen(!navOpen);
-    }
-   
-    const isDesktop = (e) => {
-        if(e.matches){
-            setNavOpen(false);
-        }
-    }
-
-    useEffect(() => {
-        let mediaQuery = window.matchMedia('(min-width: 600px)');
-        mediaQuery.addListener(isDesktop);
-        // this is the cleanup function to remove the listener
-        return () => mediaQuery.removeListener(isDesktop);
-    }, []);
-
     return (
-        <header className={navOpen ? 'show' : undefined}>
+        <header className="header-wrapper">
             <div className="headericon">
                 <div className="blurry-effect"></div>
-                <Link to="/">
-                    <img src={logo} alt="Logo" className="logo" />
-                </Link>
             </div>
+            <Link to='/'><img src={ Logo } alt="Logo" className="logo" /></Link>
+            <MainNav />
 
-             {/**
-             * HTML for the Hamburger icon modified from HTMl 
-             * found at this codepen:
-             * https://codepen.io/RRoberts/pen/ZBYaJr
-             */}
-
-            <button className="btn-main-nav" 
-                    onMouseDown={(e) => { e.preventDefault(); }}
-                    onClick={showHideNav}>
-                <span className="hamburger-icon">
-                    <span className="line"></span>
-                    <span className="line"></span>
-                    <span className="line"></span>
-                </span>
-                <span className="sr-only"></span>
-            </button>
-            <NavMain handleShowHideNav={showHideNav} />
+            <span className="sr-only"></span>
         </header>
     )
 }

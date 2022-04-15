@@ -1,0 +1,62 @@
+@use "../utilities/mixins" as *;
+@use "../utilities/variables" as *;
+
+footer {
+    text-align: center;
+    border-top: 3px solid $grey;
+    margin-top: 3rem;
+
+    h4 {
+        margin-bottom: 0;
+        padding-bottom: .25rem;
+        color: $red;
+        background: none;
+        text-shadow: 0 0 5px rgba(255,255,255,.4), 0 0 40px rgba(255,255,255,.4);
+    }
+
+    .item-footer {
+        margin-bottom: 3rem;
+
+        ul {
+        padding: 0;
+        margin-top: 0;
+
+            li {
+                &:hover,
+                &:focus,
+                &:active {
+                    color: $lightGrey;
+                }
+
+                a {
+                    text-decoration: none;
+                    -webkit-transition: all 0.2s ease-in-out;
+                    transition: all 0.2s ease-in-out;
+                    color: $light;
+                    background: none;
+                    text-shadow: 0 0 5px rgba(255,255,255,.4), 0 0 40px rgba(255,255,255,.4);
+        
+                    &:hover,
+                    &:focus,
+                    &:active {
+                        color: $lightGrey;
+                    }
+                }
+            }
+        }
+
+        @media (min-width:$tablet) {
+            display: flex;
+            justify-content: space-evenly;
+            
+            h4,
+            ul {
+                text-align: left;
+            }
+        }
+    }
+
+    @media (min-width:$tablet) {
+        margin-top: 5rem;
+    }
+}

@@ -1,0 +1,79 @@
+// Nav Sorting for Movies
+
+@use "../utilities/variables" as *;
+@use "../utilities/mixins" as *;
+
+.nav-sort {
+
+    ul {
+        margin: 0;
+        padding: 0 1rem 2.5rem 1rem;
+        display: flex;
+        justify-content: space-between;
+        
+
+        li {
+            font-size: .75rem;
+        }
+
+        a {
+            text-decoration: none;
+            font-size: .75rem;
+            -webkit-transition: all 0.2s ease-in-out;
+            transition: all 0.2s ease-in-out;
+            text-decoration: none;
+            position: relative;
+
+            color: $lightGrey;
+            background: $dk-background;
+            text-shadow: 0 0 15px rgba(255,255,255, 0.7), 0 0 10px rgba(255,255,255, 0.7);
+
+            &:hover,
+            &:focus,
+            &:active {
+                color: $light;
+            }
+        }
+
+        @media (min-width:$landscapeIphone) {
+            padding: 0 2rem 2.5rem 2rem;   
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            text-align: center;    
+        }
+
+        @media (min-width:$tablet) {
+            padding: 0 2rem 2.5rem 2rem;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            text-align: center;
+
+            li,
+            a {
+                font-size: .90rem;
+            }            
+        }
+
+        @media (min-width:$landscapeIpad) {
+            padding: 0 4rem 1.75rem 4rem;       
+        }
+
+        @media (min-width:$desktop) {
+            padding: 0 4.5rem 2.25rem 4.5rem;
+
+            li,
+            a {
+                font-size: 1.15rem;
+            }
+        }
+
+        @media (min-width:$desktopWide) {
+            padding: 0 7rem 3rem 7rem; 
+            
+            li,
+            a {
+                font-size: 1.25rem;
+            } 
+        }
+    }
+}
