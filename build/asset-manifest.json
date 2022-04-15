@@ -1,14 +1,19 @@
 {
   "files": {
-    "main.css": "/moogle/static/css/main.e2e5a611.css",
-    "main.js": "/moogle/static/js/main.d456bd57.js",
+    "main.css": "/moogle/static/css/main.63387655.css",
+    "main.js": "/moogle/static/js/main.2f8d100b.js",
     "static/media/no-movie-poster.jpg": "/moogle/static/media/no-movie-poster.dc594cc695d6716f3218.jpg",
+    "static/media/moogleLogo.svg": "/moogle/static/media/moogleLogo.253b395d23111811cb4e79d3362c5406.svg",
     "index.html": "/moogle/index.html",
-    "main.e2e5a611.css.map": "/moogle/static/css/main.e2e5a611.css.map",
-    "main.d456bd57.js.map": "/moogle/static/js/main.d456bd57.js.map"
+    "static/media/tmdbLogo.svg": "/moogle/static/media/tmdbLogo.de1a664e8d0777ca4ddb2a5a298bcfb6.svg",
+    "static/media/icon.svg": "/moogle/static/media/icon.5a2ae3c10f0520bd615a9df9d517366b.svg",
+    "static/media/unfavorite.svg": "/moogle/static/media/unfavorite.8db97e63a55fb2c1190e2b079f876165.svg",
+    "static/media/favorite.svg": "/moogle/static/media/favorite.1361bc345616664f3f26903607041302.svg",
+    "main.63387655.css.map": "/moogle/static/css/main.63387655.css.map",
+    "main.2f8d100b.js.map": "/moogle/static/js/main.2f8d100b.js.map"
   },
   "entrypoints": [
-    "static/css/main.e2e5a611.css",
-    "static/js/main.d456bd57.js"
+    "static/css/main.63387655.css",
+    "static/js/main.2f8d100b.js"
   ]
 }
